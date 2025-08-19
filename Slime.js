@@ -1,0 +1,1 @@
+const Criatura = require('./Criatura');

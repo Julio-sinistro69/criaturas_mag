@@ -1,3 +1,5 @@
-const Fada = require('./classes/Fada');
-const Dragao = require('./classes/Dragao');
-const Gnomo = require('./classes/Gnomo');
+const Criatura = require('./Criatura');
+
+let Criatura1 = new Criatura(`Criatura`);
+Criatura1.descansar();
+Criatura1.setenergia(100)

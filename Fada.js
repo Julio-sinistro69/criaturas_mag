@@ -9,6 +9,15 @@ class Fada extends Criatura {
     console.log(`${this.nome} ataca com ${this.ataqueMagico}!`);
     this.alterarEnergia(-15);
   }
+
+  descansar() {
+    if (this.getenergia() >= 100) {
+      console.log(`${this.nome} não precisa descansar`);
+    } else {
+      console.log(`${this.nome} descansou e recuperou 15 de energia.`);
+      this.alterarEnergia(+15);
+    }
+  }
 }
 
 module.exports = Fada;
