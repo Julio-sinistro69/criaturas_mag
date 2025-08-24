@@ -1,45 +1,29 @@
-class Criatura{
-
+class Criatura {
     nome;
-    atk_magico;
+    ataqueMagico;
     #energia;
 
-    constructor(nome, atk_magico){
+    constructor(nome, ataqueMagico) {
         this.nome = nome;
-        this.atk_magico = atk_magico;
+        this.ataqueMagico = ataqueMagico;
         this.#energia = 100;
     }
-    
-    getenergia(){
-        return this.#energia
-    }
-    setenergia(energia){
-        this.energia = 100;
-    }
-    ataque_Magico(){
-        console.log(`${this.nome} usou ${this.atk_magico}`);
-    }
-
-    agir(){
-        this.alterar_Energia(-10)
-        console.log(`${this.nome} usa Peido infernal, ${this.#energia} reduzida em 10`);
-        console.log(`${this.nome} tem ${this.#energia}.`);
-    }
-
-    alterar_Energia(valor){
-        
+    alterarEnergia(valor) {
         this.#energia += valor;
-        console.log(`${this.nome} agora tem ${this.#energia} de energia`);
-
+        console.log(`${this.nome} agora tem ${this.#energia} de energia.`);
     }
-
-    descansar(){
+    agir() {
+        this.alterarEnergia(-10);
+        console.log(`${this.nome} usa ${this.ataqueMagico}!`);
+    }
+    descansar() {
         if (this.#energia >= 100) {
-            console.log(`${this.nome} não precisa descansar`);
-        }else{
-            console.log(`${this.nome} descansou e recuperou 15 de energia.`);
-            this.alterar_Energia(+15)
+            console.log(`${this.nome} não precisa descansar.`);
+        } else {
+            this.alterarEnergia(15);
+            console.log(`${this.nome} descansou. Energia restaurada!`);
         }
     }
 }
+
 module.exports = Criatura;
